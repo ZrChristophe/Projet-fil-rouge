@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreamFlix</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <nav aria-label="Navigation principale">
+      <a href="index.html">
+        <img src="image/logo.png" alt="Logo StreamFlix" class="logo">
+      </a>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="films.html">Films</a></li>
+        <li><a href="séries.html">Séries</a></li>
+        <li><a href="Ma liste.html">Ma Liste</a></li>
+      </ul>
+      <div class="user-zone">
+        <form role="search" aria-label="Recherche de films">
+          <input type="search" placeholder="Rechercher...">
+        </form>
+        <div class="profile-menu">
+          <button aria-haspopup="true" aria-expanded="false">Profil ▼</button>
+          <ul>
+            <li><a href="#">Mon compte</a></li>
+            <li><a href="#">Se déconnecter</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" style="background-image: url('image/inception.webp');">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Inception</h1>
+      <p>
+Des bobos parisiens découvrent que chaque vache est unique en rencontrant le troupeau de leurs voisines, deux soeurs valaisannes. S'ensuit une catastrophique fable sur le "paradis" de l'alpage.      </p>
+      <p><strong>2010</strong> • 2h28 •  4.5/5 • Sci-Fi, Thriller</p>
+      <div class="buttons">
+        <!-- Bouton -->
+ <div class="buttons">
+        <button id="playBtn" class="video-thumb" data-video="https://www.youtube.com/embed/CPTIgILtna8">▶ Lecture</button>
+
+<!-- Modal -->
+<div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <div style="position:relative; width:80%; max-width:800px;">
+    <span id="closeModal" style="position:absolute; top:10px; right:20px; font-size:30px; color:white; cursor:pointer;">&times;</span>
+    <iframe id="videoFrame" width="100%" height="450" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!--FINI ICI VIDEO-->
+
+        <!-- Plus d'infos -->
+  <button id="infoBtn">ℹ Plus d'infos</button>
+
+  <!-- Ma liste -->
+  <button id="myListBtn">+ Ma Liste</button>
+
+  <!-- Modal Infos -->
+<div id="infoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; color:white;">
+  <div style="position:relative; width:60%; max-width:600px; background:#222; padding:20px; border-radius:10px;">
+    <span id="closeInfo" style="position:absolute; top:10px; right:20px; font-size:30px; color:white; cursor:pointer;">&times;</span>
+    <h2>Infos sur Inception</h2>
+    <p>Des bobos parisiens découvrent que chaque vache est unique en rencontrant le troupeau de leurs voisines, deux soeurs valaisannes. S'ensuit une catastrophique fable sur le "paradis" de l'alpage.</p>
+    <p><strong>Année :</strong> 2010</p>
+    <p><strong>Durée :</strong> 2h28</p>
+    <p><strong>Note :</strong> 4.5/5</p>
+    <p><strong>Genres :</strong> Sci-Fi, Thriller</p>
+  </div>
+</div>
+<script>
+  // Modal infos
+  const infoBtn = document.getElementById('infoBtn');
+  const infoModal = document.getElementById('infoModal');
+  const closeInfo = document.getElementById('closeInfo');
+
+  infoBtn.addEventListener('click', () => {
+    infoModal.style.display = "flex";
+  });
+
+  closeInfo.addEventListener('click', () => {
+    infoModal.style.display = "none";
+  });
+
+  // Ajouter à la liste
+  const myListBtn = document.getElementById('myListBtn');
+  myListBtn.addEventListener('click', () => {
+    alert("Inception a été ajouté à votre liste !");
+  });
+</script>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Grilles de contenus ===== -->
+  <main>
+    <!-- Tendances actuelles -->
+    <section aria-labelledby="tendances">
+      <h2 id="tendances">Tendances actuelles</h2>
+      <div class="grid">
+        <article>
+          <img src="image/darknight.webp" alt="Affiche The Dark Knight" class="video-thumb" data-video="https://www.youtube.com/embed/EXeTwQWrcwY">
+          <h3>The Dark Knight</h3>
+          <p>2008 • 2h34 - 4.8/5</p>
+          <p>Action, Crime, Drama</p> 
+        </article>
+        <article>
+          <img src="image/interstellar_film_poster.jpg" alt="Affiche Interstellar" class="video-thumb" data-video="https://www.youtube.com/embed/zSWdZVtXT7E">
+          <h3>Interstellar</h3>
+          <p>2014 - 2h49 - 4.7/5</p>
+          <p>Sci-Fi, Drama</p>
+        </article>
+        <article>
+          <img src="image/pulp_fiction.jpg" alt="Affiche Pulp Fiction" class="video-thumb" data-video="https://www.youtube.com/embed/s7EdQ4FqbhY">
+          <h3>Pulp Fiction</h3>
+          <p>1994 • 2h34 - 4.6/5</p>
+          <p>Crime, Drama</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Films d'horreur -->
+    <section aria-labelledby="horreur">
+      <h2 id="horreur">Films d'horreur</h2>
+      <div class="grid">
+        <article>
+          <img src="image/nomme.jpg" alt="Affiche Nommé" class="video-thumb" data-video="https://www.youtube.com/embed/hxRjOBRINu0?si=gssdE_dZnGR6tjTJ">
+          <h3>Nommé</h3>
+          <p>2020 - 1h50 -  4.2/5</p>
+          <p>Horreur, Thriller</p>
+        </article>
+        <article>
+          <img src="image/smile.avif" alt="Affiche Smile" class="video-thumb" data-video="https://www.youtube.com/embed/GL7nOrqkfrw?si=gvTaVRm_nvPg0Tna">
+          <h3>Smile</h3>
+          <p>2022 - 1h55 -  4.0/5</p>
+          <p>Horreur, Psychologique</p>
+        </article>
+        <article>
+          <img src="image/terri.avif" alt="Affiche Terrifier 2" class="video-thumb" data-video="https://www.youtube.com/embed/6KkONLf_ZKU?si=dBBr1p6LmXtafdrG">
+          <h3>Terrifier 2</h3>
+          <p>2022 - 2h18 -  4.3/5</p>
+          <p>Horreur, Gore</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Recommandés pour vous -->
+    <section aria-labelledby="recommandes">
+      <h2 id="recommandes">Recommandés pour vous</h2>
+      <div class="grid">
+        <article>
+          <img src="image/inception.webp" alt="Affiche Inception" class="video-thumb" data-video="https://www.youtube.com/embed/CPTIgILtna8?si=OsMnymHC3cZIhq0i">
+          <h3>Inception</h3>
+          <p>2010 - 2h28 - 4.5/5</p>
+          <p>Sci-Fi, Thriller</p>
+        </article>
+        <article>
+          <img src="image/matrix.jpeg" alt="Affiche The Matrix" class="video-thumb" data-video="https://www.youtube.com/embed/8xx91zoASLY?si=sYn196TI9W_6NTOP">
+          <h3>The Matrix</h3>
+          <p>1999 - 2h16 - 4.5/5</p>
+          <p>Action, Sci-Fi</p>
+        </article>
+        <article>
+          <img src="image/forrest_gump.jpg" alt="Affiche Forrest Gump" class="video-thumb" data-video="https://www.youtube.com/embed/bLvqoHBptjg?si=ZVzI-urVhuq2f2WM">
+          <h3>Forrest Gump</h3>
+          <p>1994 - 2h22 - 4.4/5</p>
+          <p>Drama, Romance</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Nouveautés -->
+    <section aria-labelledby="nouveautes">
+      <h2 id="nouveautes">Nouveautés</h2>
+      <div class="grid">
+        <article>
+          <img src="image/Demon.jpg" alt="Affiche Inception" class="video-thumb" data-video="https://www.youtube.com/embed/Q8TwRRUocMg?si=RSHZzwSr-dGLmYtS">
+          <h3>Demon</h3>
+          <p>2023 - 1h50 - 5/5</p>
+          <p>Horreur</p>
+        </article>
+        <article>
+          <img src="image/darknight.webp" alt="Affiche The Dark Knight" class="video-thumb" data-video="https://www.youtube.com/embed/EXeTwQWrcwY">
+          <h3>The Dark Knight</h3>
+          <p>2008 - 2h32 - 4.8/5</p>
+          <p>Action, Crime, Drama</p>
+        </article>
+        <article>
+          <img src="image/inception.webp" alt="Affiche Inception" class="video-thumb" data-video="https://www.youtube.com/embed/CPTIgILtna8?si=OsMnymHC3cZIhq0i">
+          <h3>Inception</h3>
+          <p>2010 - 2h28 - 4.5/5</p>
+          <p>Sci-Fi, Thriller</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <nav aria-label="Liens utiles">
+      <ul>
+        <li><a href="aide.html">Aide</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="Mentions légales.html">Mentions légales</a></li>
+        <li><a href="condiftion.html">Conditions d'utilisation</a></li>
+      </ul>
+    </nav>
+    <p>© 2025 StreamFlix. Tous droits réservés.</p>
+    <div class="socials">
+      <a href="https://www.facebook.com/?locale=fr_FR">Facebook</a> | 
+      <a href="https://x.com/">X</a> | 
+      <a href="https://www.instagram.com/">Instagram</a>
+    </div>
+  </footer>
+</body>
+</html>
