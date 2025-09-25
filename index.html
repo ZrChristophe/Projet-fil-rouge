@@ -38,46 +38,44 @@
   </header>
 
   <!-- ===== Hero Section ===== -->
-  <section class="hero" style="background-image: url('image/inception.webp');">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Inception</h1>
-      <p>
-Des bobos parisiens découvrent que chaque vache est unique en rencontrant le troupeau de leurs voisines, deux soeurs valaisannes. S'ensuit une catastrophique fable sur le "paradis" de l'alpage.      </p>
-      <p><strong>2010</strong> • 2h28 •  4.5/5 • Sci-Fi, Thriller</p>
-      <div class="buttons">
-        <!-- Bouton -->
- <div class="buttons">
-        <button id="playBtn" class="video-thumb" data-video="https://www.youtube.com/embed/CPTIgILtna8">▶ Lecture</button>
+  <section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="Inception 2010.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <h1>Inception</h1>
+    <p>Des bobos parisiens découvrent que chaque vache est unique en rencontrant le troupeau de leurs voisines...</p>
+    <p><strong>2010</strong> • 2h28 • 4.5/5 • Sci-Fi, Thriller</p>
 
-<!-- Modal -->
-<div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
-  <div style="position:relative; width:80%; max-width:800px;">
-    <span id="closeModal" style="position:absolute; top:10px; right:20px; font-size:30px; color:white; cursor:pointer;">&times;</span>
+    <div class="buttons">
+      <button class="video-thumb" data-video="https://www.youtube.com/embed/CPTIgILtna8">▶ Lecture</button>
+      <button id="infoBtn">ℹ Plus d'infos</button>
+      <button id="myListBtn">+ Ma Liste</button>
+    </div>
+  </div>
+</section>
+
+<!-- Modal Video -->
+<div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-label="Lecture vidéo">
+  <div class="modal-content">
+    <span id="closeModal" class="close-btn">&times;</span>
     <iframe id="videoFrame" width="100%" height="450" src="" frameborder="0" allowfullscreen></iframe>
   </div>
 </div>
 
-<!--FINI ICI VIDEO-->
-
-        <!-- Plus d'infos -->
-  <button id="infoBtn">ℹ Plus d'infos</button>
-
-  <!-- Ma liste -->
-  <button id="myListBtn">+ Ma Liste</button>
-
-  <!-- Modal Infos -->
-<div id="infoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; color:white;">
-  <div style="position:relative; width:60%; max-width:600px; background:#222; padding:20px; border-radius:10px;">
-    <span id="closeInfo" style="position:absolute; top:10px; right:20px; font-size:30px; color:white; cursor:pointer;">&times;</span>
+<!-- Modal Infos -->
+<div id="infoModal" class="modal" role="dialog" aria-modal="true" aria-label="Informations film">
+  <div class="modal-content">
+    <span id="closeInfo" class="close-btn">&times;</span>
     <h2>Infos sur Inception</h2>
-    <p>Des bobos parisiens découvrent que chaque vache est unique en rencontrant le troupeau de leurs voisines, deux soeurs valaisannes. S'ensuit une catastrophique fable sur le "paradis" de l'alpage.</p>
+    <p>Des bobos parisiens découvrent que chaque vache est unique...</p>
     <p><strong>Année :</strong> 2010</p>
     <p><strong>Durée :</strong> 2h28</p>
     <p><strong>Note :</strong> 4.5/5</p>
     <p><strong>Genres :</strong> Sci-Fi, Thriller</p>
   </div>
 </div>
+
 <script>
   // Modal infos
   const infoBtn = document.getElementById('infoBtn');
