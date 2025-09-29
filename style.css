@@ -74,7 +74,7 @@ nav ul li a:hover {
   background: #222;
   list-style: none;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 .profile-menu button {
@@ -97,7 +97,7 @@ nav ul li a:hover {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 40px;
+  padding: 1px;
   margin-top: 60px; /* pour compenser le header fixe */
 }
 
@@ -267,4 +267,38 @@ footer .socials a:hover {
 
 .hero button:hover {
   opacity: 0.9;
+}
+
+/* Style général des boutons */
+button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Boutons "Ajouter à Ma Liste" */
+.addToListBtn {
+  background-color: #ff4c4c;  /* Rouge vif */
+  color: #fff;
+  font-weight: bold;
+}
+
+.addToListBtn:hover {
+  background-color: #e04343;  /* Rouge plus foncé au survol */
+  transform: scale(1.05);
+}
+
+/* Boutons "Supprimer" (si tu veux aussi les styliser) */
+.removeBtn {
+  background-color: #555;      /* Gris foncé */
+  color: #fff;
+  font-weight: bold;
+}
+
+.removeBtn:hover {
+  background-color: #333;      /* Plus foncé au survol */
+  transform: scale(1.05);
 }

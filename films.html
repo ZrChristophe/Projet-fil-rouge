@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StreamFlix</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
 </head>
 <body>
 
@@ -27,13 +29,39 @@
         <div class="profile-menu">
           <button aria-haspopup="true" aria-expanded="false">Profil ▼</button>
           <ul>
-            <li><a href="#">Mon compte</a></li>
-            <li><a href="#">Se déconnecter</a></li>
+            <li><a href="Inscription.html">Mon compte</a></li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
+<div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-label="Lecture vidéo">
+  <div class="modal-content">
+    <span id="closeModal" class="close-btn">&times;</span>
+    <iframe id="videoFrame" width="100%" height="450" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+  // Modal infos
+  const infoBtn = document.getElementById('infoBtn');
+  const infoModal = document.getElementById('infoModal');
+  const closeInfo = document.getElementById('closeInfo');
+
+  infoBtn.addEventListener('click', () => {
+    infoModal.style.display = "flex";
+  });
+
+  closeInfo.addEventListener('click', () => {
+    infoModal.style.display = "none";
+  });
+
+  // Ajouter à la liste
+  const myListBtn = document.getElementById('myListBtn');
+  myListBtn.addEventListener('click', () => {
+    alert("Inception a été ajouté à votre liste !");
+  });
+</script>
 
 
   <!-- ===== Grilles de contenus ===== -->
@@ -51,13 +79,13 @@
             La violence, montrée, assumée, de certaines scènes du film sud-coréen Hopeless, dans les salles françaises le 17 avril, est particulièrement insoutenable.</p>
         </article>
         <article>
-          <img src="image/delivery.webp" class="video-thumb" data-video="https://www.youtube.com/embed/EXeTwQWrcwY">
+          <img src="image/delivery.webp" class="video-thumb" data-video="https://www.youtube.com/embed/yGAktL45XNQ?si=lz3Dwj6d3POy2oa6">
           <h3>Delivery Man</h3>
           <p>2013 - 2.7/5</p>
           <p>Un ancien donneur de sperme découvre, des années plus tard, qu'il est le père de centaines d'enfants, dont une partie veut le rencontrer.</p>
         </article>
         <article>
-          <img src="image/Pacific.jpg" class="video-thumb" data-video="https://www.youtube.com/embed/EXeTwQWrcwY">
+          <img src="image/Pacific.jpg" class="video-thumb" data-video="https://www.youtube.com/embed/qOX_O118N7k?si=HQP02yqZ6O828ZFX">
           <h3>Pacific Rim</h3>
           <p>2013 - 4.6/5</p>
           <p>Il y a longtemps, des légions de créatures appelées Kaiju sont sorties de la mer, apportant la guerre. Pour combattre les Kaiju, l'humanité à créer des robots géants appelés Jaegers, conçus pour être pilotés par deux humains enfermés ensemble dans un pont neutre.</p>
@@ -70,19 +98,19 @@
       <h2 id="horreur"></h2>
       <div class="grid">
         <article>
-          <img src="image/Emani.webp" alt="Affiche Nommé">
+          <img src="image/Emani.webp" class="video-thumb" data-video="https://www.youtube.com/embed/lfzbRaR9Ng4?si=_2xlzbGA0m8rzaru">
           <h3>Emancipation</h3>
           <p>2022 - 3.5/5</p>
           <p>L'histoire de Peter, un homme qui fuit l'esclavage en étant porté par son esprit vif, sa foi inébranlable et son amour pour sa famille. Il doit échapper à des gens sans pitié l'ayant pris en chasse et aux redoutables marais de la Louisiane.</p>
         </article>
         <article>
-          <img src="image/Squid.jpg" alt="Affiche Smile">
+          <img src="image/Squid.jpg" class="video-thumb"data-video="https://www.youtube.com/embed/aQAbx8XZBII?si=1fA9aecO0SZsj6eS">
           <h3>Squid Game</h3>
           <p>2025 -  4.0/5</p>
           <p>Des personnes en difficultés financières sont invitées à une mystérieuse compétition de survie. Participant à une série de jeux traditionnels pour enfants, mais avec des rebondissements mortels, elles risquent leur vie pour une grosse somme d'argent.</p>
         </article>
         <article>
-          <img src="image/Alice.webp" alt="Affiche Terrifier 2">
+          <img src="image/Alice.webp" class="video-thumb"data-video="https://www.youtube.com/embed/IkyV2EA622g?si=2dkqgOSc0ARGK4Po">
           <h3>Alice in Borderland</h3>
           <p>2020 - 4.3/5</p>
           <p>Arisu, un obsédé de jeux vidéos, se retrouve soudainement dans une étrange version, totalement déserte, de Tokyo, et dans laquelle lui et ses amis doivent participer à des jeux dangereux pour survivre.</p>
@@ -91,6 +119,7 @@
     </section>
   </main></center>
 
+  
   <!-- ===== Footer ===== -->
   <footer>
     <nav aria-label="Liens utiles">

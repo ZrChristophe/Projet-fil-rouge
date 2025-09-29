@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscription / Connexion</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    width: 320px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  button.return-btn {
+    background-color: #6c757d;
+  }
+
+  button.return-btn:hover {
+    background-color: #5a6268;
+  }
+
+  p#status {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Créer un compte</h2>
+  <input type="text" id="nom" placeholder="Nom">
+  <input type="text" id="prenom" placeholder="Prénom">
+  <input type="email" id="email" placeholder="Email">
+  <input type="tel" id="numero" placeholder="Numéro">
+  <button onclick="inscrire()">S'inscrire</button>
+
+  <h2>Connexion</h2>
+  <input type="email" id="loginEmail" placeholder="Email">
+  <button onclick="connecter()">Se connecter</button>
+
+  <h2>Déconnexion</h2>
+  <button onclick="deconnecter()">Se déconnecter</button>
+
+  <button class="return-btn" onclick="retourIndex()">Retour à l'index</button>
+
+  <p id="status">Déconnecté</p>
+</div>
+
+<script>
+function inscrire() {
+    const user = {
+        nom: document.getElementById('nom').value,
+        prenom: document.getElementById('prenom').value,
+        email: document.getElementById('email').value,
+        numero: document.getElementById('numero').value
+    };
+    localStorage.setItem('user', JSON.stringify(user));
+    alert('Compte créé !');
+}
+
+function connecter() {
+    const email = document.getElementById('loginEmail').value;
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (user && user.email === email) {
+        sessionStorage.setItem('connectedUser', JSON.stringify(user));
+        document.getElementById('status').innerText = `Connecté : ${user.prenom} ${user.nom}`;
+    } else {
+        alert('Utilisateur non trouvé');
+    }
+}
+
+function deconnecter() {
+    sessionStorage.removeItem('connectedUser');
+    document.getElementById('status').innerText = 'Déconnecté';
+}
+
+function retourIndex() {
+    window.location.href = "index.html"; // Redirige vers index.html
+}
+</script>
+
+</body>
+</html>
