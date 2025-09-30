@@ -281,3 +281,23 @@ function displayMyList() {
 
 // Lancer au chargement de la page
 document.addEventListener("DOMContentLoaded", displayMyList);
+
+
+  // Modal infos
+  const infoBtn = document.getElementById('infoBtn');
+  const infoModal = document.getElementById('infoModal');
+  const closeInfo = document.getElementById('closeInfo');
+
+  infoBtn.addEventListener('click', () => {
+    infoModal.style.display = "flex";
+  });
+
+  closeInfo.addEventListener('click', () => {
+    infoModal.style.display = "none";
+  });
+
+  // Ajouter à la liste
+  const myListBtn = document.getElementById('myListBtn');
+  myListBtn.addEventListener('click', () => {
+    alert("Inception a été ajouté à votre liste !");
+  });

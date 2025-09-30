@@ -79,27 +79,6 @@
   </div>
 </div>
 
-<script>
-  // Modal infos
-  const infoBtn = document.getElementById('infoBtn');
-  const infoModal = document.getElementById('infoModal');
-  const closeInfo = document.getElementById('closeInfo');
-
-  infoBtn.addEventListener('click', () => {
-    infoModal.style.display = "flex";
-  });
-
-  closeInfo.addEventListener('click', () => {
-    infoModal.style.display = "none";
-  });
-
-  // Ajouter à la liste
-  const myListBtn = document.getElementById('myListBtn');
-  myListBtn.addEventListener('click', () => {
-    alert("Inception a été ajouté à votre liste !");
-  });
-</script>
-
   <!-- ===== Grilles de contenus ===== -->
  <!-- ===== Grilles de contenus ===== -->
 <main>
@@ -116,7 +95,7 @@
           class="addToListBtn" 
           data-title="The Dark Knight" 
           data-img="image/darknight.webp" 
-          data-info="2008 • 2h34 • ⭐ 4.8/5 • Action, Crime, Drama">+ Ma Liste</button>
+          data-info="2008 • 2h34 • 4.8/5 • Action, Crime, Drama">+ Ma Liste</button>
       </article>
 
       <article>
@@ -128,7 +107,7 @@
           class="addToListBtn" 
           data-title="Interstellar" 
           data-img="image/interstellar_film_poster.jpg" 
-          data-info="2014 • 2h49 • ⭐ 4.7/5 • Sci-Fi, Drama">+ Ma Liste</button>
+          data-info="2014 • 2h49 • 4.7/5 • Sci-Fi, Drama">+ Ma Liste</button>
       </article>
 
       <article>
@@ -140,7 +119,7 @@
           class="addToListBtn" 
           data-title="Pulp Fiction" 
           data-img="image/pulp_fiction.jpg" 
-          data-info="1994 • 2h34 • ⭐ 4.6/5 • Crime, Drama">+ Ma Liste</button>
+          data-info="1994 • 2h34 •  4.6/5 • Crime, Drama">+ Ma Liste</button>
       </article>
 
       <article>
@@ -152,7 +131,7 @@
           class="addToListBtn" 
           data-title="Mufana" 
           data-img="image/Lion.jpg" 
-          data-info="1994 • 2h34 • ⭐ 4.6/5 • Crime, Drama">+ Ma Liste</button>
+          data-info="1994 • 2h34 •  4.6/5 • Crime, Drama">+ Ma Liste</button>
       </article>
 
       <article>
@@ -164,7 +143,7 @@
           class="addToListBtn" 
           data-title="Jungle" 
           data-img="image/Jungle.webp" 
-          data-info="1994 • 2h34 • ⭐ 4.6/5 • Crime, Drama">+ Ma Liste</button>
+          data-info="1994 • 2h34 • 4.6/5 • Crime, Drama">+ Ma Liste</button>
       </article>
 
       <article>
@@ -176,7 +155,7 @@
           class="addToListBtn" 
           data-title="Flow" 
           data-img="image/Flow.jpg" 
-          data-info="1994 • 2h34 • ⭐ 4.6/5 • Crime, Drama">+ Ma Liste</button>
+          data-info="1994 • 2h34 • 4.6/5 • Crime, Drama">+ Ma Liste</button>
       </article>
     </div>
   </section>
@@ -194,7 +173,7 @@
           class="addToListBtn" 
           data-title="Nonne" 
           data-img="image/nomme.jpg" 
-          data-info="2020 • 1h50 • ⭐ 4.2/5 • Horreur, Thriller">+ Ma Liste</button>
+          data-info="2020 • 1h50 • 4.2/5 • Horreur, Thriller">+ Ma Liste</button>
       </article>
 
       <article>
@@ -206,7 +185,7 @@
           class="addToListBtn" 
           data-title="Smile 2" 
           data-img="image/smile.avif" 
-          data-info="2022 • 1h55 • ⭐ 4.0/5 • Horreur, Psychologique">+ Ma Liste</button>
+          data-info="2022 • 1h55 • 4.0/5 • Horreur, Psychologique">+ Ma Liste</button>
       </article>
 
       <article>
@@ -218,7 +197,7 @@
           class="addToListBtn" 
           data-title="Terrifier 2" 
           data-img="image/terri.avif" 
-          data-info="2022 • 2h18 • ⭐ 4.3/5 • Horreur, Gore">+ Ma Liste</button>
+          data-info="2022 • 2h18 • 4.3/5 • Horreur, Gore">+ Ma Liste</button>
       </article>
 
       <article>
@@ -230,7 +209,7 @@
           class="addToListBtn" 
           data-title="Smile" 
           data-img="image/Smile.jpg" 
-          data-info="2022 • 2h18 • ⭐ 4.3/5 • Horreur, Gore">+ Ma Liste</button>
+          data-info="2022 • 2h18 • 4.3/5 • Horreur, Gore">+ Ma Liste</button>
       </article>
 
       <article>
@@ -242,7 +221,7 @@
           class="addToListBtn" 
           data-title="La nuit des clowns" 
           data-img="image/Nuit.webp" 
-          data-info="2022 • 2h18 • ⭐ 4.3/5 • Horreur, Gore">+ Ma Liste</button>
+          data-info="2022 • 2h18 • 4.3/5 • Horreur, Gore">+ Ma Liste</button>
       </article>
 
       <article>
@@ -254,7 +233,7 @@
           class="addToListBtn" 
           data-title="Conjuring" 
           data-img="image/conjuring.jpg" 
-          data-info="2022 • 2h18 • ⭐ 4.3/5 • Horreur, Gore">+ Ma Liste</button>
+          data-info="2022 • 2h18 • 4.3/5 • Horreur, Gore">+ Ma Liste</button>
       </article>
     </div>
   </section>
@@ -276,7 +255,7 @@
         class="addToListBtn" 
         data-title="Inception" 
         data-img="image/inception.webp" 
-        data-info="2010 • 2h28 • ⭐ 4.5/5 • Sci-Fi, Thriller">+ Ma Liste</button>
+        data-info="2010 • 2h28 • 4.5/5 • Sci-Fi, Thriller">+ Ma Liste</button>
     </article>
 
     <article>
@@ -288,7 +267,7 @@
         class="addToListBtn" 
         data-title="The Matrix" 
         data-img="image/matrix.jpeg" 
-        data-info="1999 • 2h16 • ⭐ 4.5/5 • Action, Sci-Fi">+ Ma Liste</button>
+        data-info="1999 • 2h16 • 4.5/5 • Action, Sci-Fi">+ Ma Liste</button>
     </article>
 
     <article>
@@ -300,7 +279,7 @@
         class="addToListBtn" 
         data-title="Forrest Gump" 
         data-img="image/forrest_gump.jpg" 
-        data-info="1994 • 2h22 • ⭐ 4.4/5 • Drama, Romance">+ Ma Liste</button>
+        data-info="1994 • 2h22 • 4.4/5 • Drama, Romance">+ Ma Liste</button>
     </article>
 
     <article>
@@ -312,7 +291,7 @@
         class="addToListBtn" 
         data-title="Flow" 
         data-img="image/Flow.jpg" 
-        data-info="1994 • 2h34 • ⭐ 4.6/5 • Crime, Drama">+ Ma Liste</button>
+        data-info="1994 • 2h34 • 4.6/5 • Crime, Drama">+ Ma Liste</button>
     </article>
 
     <article>
@@ -324,7 +303,7 @@
         class="addToListBtn" 
         data-title="La nuit des clowns" 
         data-img="image/Nuit.webp" 
-        data-info="2022 • 2h18 • ⭐ 4.3/5 • Horreur, Gore">+ Ma Liste</button>
+        data-info="2022 • 2h18 • 4.3/5 • Horreur, Gore">+ Ma Liste</button>
     </article>
 
     <article>
@@ -336,7 +315,7 @@
         class="addToListBtn" 
         data-title="Jungle" 
         data-img="image/Jungle.webp" 
-        data-info="1994 • 2h34 • ⭐ 4.6/5 • Crime, Drama">+ Ma Liste</button>
+        data-info="1994 • 2h34 • 4.6/5 • Crime, Drama">+ Ma Liste</button>
     </article>
   </div>
 </section>
@@ -354,7 +333,7 @@
         class="addToListBtn" 
         data-title="Demon" 
         data-img="image/Demon.jpg" 
-        data-info="2023 • 1h50 • ⭐ 5/5 • Horreur">+ Ma Liste</button>
+        data-info="2023 • 1h50 • 5/5 • Horreur">+ Ma Liste</button>
     </article>
 
     <article>
@@ -366,7 +345,7 @@
         class="addToListBtn" 
         data-title="The Dark Knight" 
         data-img="image/darknight.webp" 
-        data-info="2008 • 2h32 • ⭐ 4.8/5 • Action, Crime, Drama">+ Ma Liste</button>
+        data-info="2008 • 2h32 • 4.8/5 • Action, Crime, Drama">+ Ma Liste</button>
     </article>
 
     <article>
@@ -378,7 +357,7 @@
         class="addToListBtn" 
         data-title="Inception" 
         data-img="image/inception.webp" 
-        data-info="2010 • 2h28 • ⭐ 4.5/5 • Sci-Fi, Thriller">+ Ma Liste</button>
+        data-info="2010 • 2h28 • 4.5/5 • Sci-Fi, Thriller">+ Ma Liste</button>
     </article>
 
     <article>
@@ -390,7 +369,7 @@
         class="addToListBtn" 
         data-title="Conjuring" 
         data-img="image/conjuring.jpg" 
-        data-info="2022 • 2h18 • ⭐ 4.3/5 • Horreur, Gore">+ Ma Liste</button>
+        data-info="2022 • 2h18 • 4.3/5 • Horreur, Gore">+ Ma Liste</button>
     </article>
 
     <article>
@@ -402,7 +381,7 @@
         class="addToListBtn" 
         data-title="La nuit des clowns" 
         data-img="image/Nuit.webp" 
-        data-info="2022 • 2h18 • ⭐ 4.3/5 • Horreur, Gore">+ Ma Liste</button>
+        data-info="2022 • 2h18 • 4.3/5 • Horreur, Gore">+ Ma Liste</button>
     </article>
 
     <article>
@@ -414,7 +393,7 @@
         class="addToListBtn" 
         data-title="Mufana" 
         data-img="image/Lion.jpg" 
-        data-info="1994 • 2h34 • ⭐ 4.6/5 • Crime, Drama">+ Ma Liste</button>
+        data-info="1994 • 2h34 • 4.6/5 • Crime, Drama">+ Ma Liste</button>
     </article>
   </div>
 </section>
