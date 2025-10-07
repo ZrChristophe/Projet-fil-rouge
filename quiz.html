@@ -7,15 +7,27 @@
   <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-  <nav>
-    <a href="#" id="home-link">Accueil</a>
-    <a href="#" id="quiz-link">Quiz Cinéma</a>
-  </nav>
+  <!-- Navigation principale -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html" id="#">Accueil</a></li>
+        <li><a href="#" id="home-link"></a></li>
+        <li><a href="quiz.html" id="quiz-link">Quiz Cinéma</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <main id="app">
-    <!-- Le contenu sera injecté ici par JS -->
+  <!-- Contenu principal -->
+  <main id="app" role="main" aria-live="polite">
+    <!-- Le contenu sera injecté ici par script.js -->
   </main>
 
-  <script src="script.js"></script>
+  <!-- Pied de page -->
+  <footer>
+    <p>🎬 Quiz Cinéma - Projet éducatif</p>
+  </footer>
+
+  <script src="script1.js"></script>
 </body>
 </html>

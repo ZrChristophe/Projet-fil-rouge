@@ -1,63 +1,74 @@
+const quizQuestions = [
+  {
+    id: 1,
+    question: "Qui a réalisé le film 'Inception' (2010) ?",
+    options: ["Steven Spielberg", "Christopher Nolan", "James Cameron", "Ridley Scott"],
+    correctAnswer: "Christopher Nolan"
+  },
+  {
+    id: 2,
+    question: "Quel film a remporté l'Oscar du meilleur film en 2020 ?",
+    options: ["1917", "Joker", "Parasite", "Once Upon a Time in Hollywood"],
+    correctAnswer: "Parasite"
+  },
+  {
+    id: 3,
+    question: "Dans quel film trouve-t-on la réplique culte 'May the Force be with you' ?",
+    options: ["Star Trek", "Star Wars", "Interstellar", "Avatar"],
+    correctAnswer: "Star Wars"
+  },
+  {
+    id: 4,
+    question: "Qui incarne Iron Man dans l'univers cinématographique Marvel ?",
+    options: ["Chris Evans", "Chris Hemsworth", "Robert Downey Jr.", "Mark Ruffalo"],
+    correctAnswer: "Robert Downey Jr."
+  },
+  {
+    id: 5,
+    question: "Quel est le film d'animation le plus rentable de tous les temps ?",
+    options: ["Le Roi Lion (2019)", "La Reine des Neiges 2", "Toy Story 4", "Les Indestructibles 2"],
+    correctAnswer: "Le Roi Lion (2019)"
+  },
+  {
+    id: 6,
+    question: "Combien d'Oscars a remporté le film 'Titanic' (1997) ?",
+    options: ["8", "11", "14", "9"],
+    correctAnswer: "11"
+  },
+  {
+    id: 7,
+    question: "Quel réalisateur est connu pour ses films 'Pulp Fiction' et 'Kill Bill' ?",
+    options: ["Martin Scorsese", "Quentin Tarantino", "David Fincher", "Guy Ritchie"],
+    correctAnswer: "Quentin Tarantino"
+  },
+  {
+    id: 8,
+    question: "Dans 'Le Seigneur des Anneaux', qui doit détruire l'anneau unique ?",
+    options: ["Aragorn", "Gandalf", "Frodon", "Sam"],
+    correctAnswer: "Frodon"
+  },
+  {
+    id: 9,
+    question: "Quel acteur joue le rôle de Jack Sparrow dans 'Pirates des Caraïbes' ?",
+    options: ["Orlando Bloom", "Johnny Depp", "Geoffrey Rush", "Javier Bardem"],
+    correctAnswer: "Johnny Depp"
+  },
+  {
+    id: 10,
+    question: "Quel film de science-fiction se déroule en grande partie dans une ville appelée Gotham ?",
+    options: ["Spider-Man", "Superman", "Batman", "Iron Man"],
+    correctAnswer: "Batman"
+  }
+];
+
 const app = document.getElementById('app');
 const homeLink = document.getElementById('home-link');
 const quizLink = document.getElementById('quiz-link');
 
-const questions = [
-  {
-    question: "Quel film a remporté l'Oscar du meilleur film en 1994 ?",
-    options: ["Pulp Fiction", "Forrest Gump", "Les Évadés", "Quatre mariages et un enterrement"],
-    answer: "Forrest Gump",
-  },
-  {
-    question: "Quel réalisateur est connu pour 'Inception' et 'Interstellar' ?",
-    options: ["Steven Spielberg", "James Cameron", "Christopher Nolan", "Quentin Tarantino"],
-    answer: "Christopher Nolan",
-  },
-  {
-    question: "Dans quel film voit-on le personnage de Jack Sparrow ?",
-    options: ["Pirates des Caraïbes", "Le Seigneur des Anneaux", "Indiana Jones", "Les Gardiens de la Galaxie"],
-    answer: "Pirates des Caraïbes",
-  },
-  {
-    question: "Qui joue le rôle principal dans 'La La Land' ?",
-    options: ["Ryan Gosling", "Leonardo DiCaprio", "Brad Pitt", "Tom Hanks"],
-    answer: "Ryan Gosling",
-  },
-  {
-    question: "Quel film est réalisé par Quentin Tarantino ?",
-    options: ["Pulp Fiction", "Titanic", "Gladiator", "Avatar"],
-    answer: "Pulp Fiction",
-  },
-  {
-    question: "Quel est le nom du hobbit dans 'Le Seigneur des Anneaux' ?",
-    options: ["Frodo", "Bilbo", "Sam", "Gandalf"],
-    answer: "Frodo",
-  },
-  {
-    question: "Qui a réalisé 'Titanic' ?",
-    options: ["James Cameron", "Steven Spielberg", "Ridley Scott", "Christopher Nolan"],
-    answer: "James Cameron",
-  },
-  {
-    question: "Quel film d'animation est produit par Pixar ?",
-    options: ["Toy Story", "Shrek", "Kung Fu Panda", "Dragons"],
-    answer: "Toy Story",
-  },
-  {
-    question: "Quel acteur incarne Iron Man ?",
-    options: ["Chris Hemsworth", "Robert Downey Jr.", "Chris Evans", "Mark Ruffalo"],
-    answer: "Robert Downey Jr.",
-  },
-  {
-    question: "Quel film se déroule dans un monde post-apocalyptique avec Max ?",
-    options: ["Mad Max", "Matrix", "Terminator", "Dune"],
-    answer: "Mad Max",
-  },
-];
-
 let currentIndex = 0;
 let userAnswers = [];
 
+// Page d'accueil
 function showHome() {
   app.innerHTML = `
     <h1>Bienvenue sur le Quiz Cinéma</h1>
@@ -67,22 +78,28 @@ function showHome() {
   document.getElementById('start-btn').addEventListener('click', startQuiz);
 }
 
+// Lancer le quiz
 function startQuiz() {
   currentIndex = 0;
   userAnswers = [];
   showQuestion();
 }
 
+// Afficher question
 function showQuestion() {
-  const q = questions[currentIndex];
+  const q = quizQuestions[currentIndex];
   app.innerHTML = `
-    <h2>Question ${currentIndex + 1}/${questions.length}</h2>
+    <h2>Question ${currentIndex + 1}/${quizQuestions.length}</h2>
     <p>${q.question}</p>
     <div class="options">
       ${q.options.map(option => `<button>${option}</button>`).join('')}
     </div>
-    <button id="next-btn" disabled>${currentIndex === questions.length - 1 ? 'Voir mes résultats' : 'Question suivante'}</button>
-    <div class="progress-bar"><div style="width: ${(currentIndex / questions.length) * 100}%"></div></div>
+    <button id="next-btn" disabled>
+      ${currentIndex === quizQuestions.length - 1 ? 'Voir mes résultats' : 'Question suivante'}
+    </button>
+    <div class="progress-bar">
+      <div style="width: ${(currentIndex / quizQuestions.length) * 100}%"></div>
+    </div>
   `;
 
   const optionButtons = document.querySelectorAll('.options button');
@@ -100,7 +117,7 @@ function showQuestion() {
   document.getElementById('next-btn').addEventListener('click', () => {
     userAnswers.push(selected);
     currentIndex++;
-    if (currentIndex < questions.length) {
+    if (currentIndex < quizQuestions.length) {
       showQuestion();
     } else {
       showResults();
@@ -108,16 +125,17 @@ function showQuestion() {
   });
 }
 
+// Résultats
 function showResults() {
   let score = 0;
-  const resultsHTML = questions.map((q, idx) => {
-    const correct = q.answer === userAnswers[idx];
+  const resultsHTML = quizQuestions.map((q, idx) => {
+    const correct = q.correctAnswer === userAnswers[idx];
     if (correct) score++;
     return `
       <li class="${correct ? 'correct' : 'wrong'}">
         <p>${q.question}</p>
         <p>Votre réponse : ${userAnswers[idx]} ${correct ? '✓' : '✗'}</p>
-        ${!correct ? `<p>Bonne réponse : ${q.answer}</p>` : ''}
+        ${!correct ? `<p>Bonne réponse : ${q.correctAnswer}</p>` : ''}
       </li>
     `;
   }).join('');
@@ -129,7 +147,7 @@ function showResults() {
   else message = "Parfait ! Vous êtes un expert du 7ème art ! 🏆";
 
   app.innerHTML = `
-    <h1>Vous avez obtenu ${score}/${questions.length} !</h1>
+    <h1>Vous avez obtenu ${score}/${quizQuestions.length} !</h1>
     <p>${message}</p>
     <ul>${resultsHTML}</ul>
     <button id="restart-btn">Recommencer le quiz</button>
@@ -140,8 +158,16 @@ function showResults() {
   document.getElementById('home-btn').addEventListener('click', showHome);
 }
 
-homeLink.addEventListener('click', showHome);
-quizLink.addEventListener('click', startQuiz);
+// Navigation
+homeLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  showHome();
+});
 
-// Affiche l'accueil au chargement
+quizLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  startQuiz();
+});
+
+// Démarrage
 showHome();
